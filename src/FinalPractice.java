@@ -58,12 +58,13 @@ public class FinalPractice {
     public static int evenSumLeaf(TreeNode root){
         if(root == null) return 0;
         if(root.left == null && root.right == null){
-            if(root.data % 2 ==0)
+            if(root.data % 2 ==0){
                 return root.data;
         }
         else{
             return 0;
         }
+    }
     
 
     return evenSumLeaf(root.left) + evenSumLeaf(root.right); 

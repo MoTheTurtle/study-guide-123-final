@@ -48,6 +48,23 @@ public class FinalPracticeTest {
         assertEquals(8, FinalPractice.evenSumLeaf(root));
     }
 
+    @Test 
+
+    void testEvenSumExample(){
+        TreeNode root = new TreeNode(12);
+
+        root.left = new TreeNode(6);
+        root.right = new TreeNode(18);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(8);
+        root.right.left= new TreeNode(16);
+        root.right.right= new TreeNode(20);
+        root.left.left.left = new TreeNode(3);
+        root.right.right.right = new TreeNode(22);
+
+        assertEquals(46, FinalPractice.evenSumLeaf(root));
+    }
+
 
 
 
