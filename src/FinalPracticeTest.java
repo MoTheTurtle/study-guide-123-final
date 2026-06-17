@@ -20,6 +20,36 @@ public class FinalPracticeTest {
         assertEquals(0, FinalPractice.oddIndexSum(list));
     }
 
+    @Test
+    void testLargest3only3nodes(){
+        ListNode list = new ListNode(5, new ListNode(30, new ListNode(10))); 
+        assertEquals(30, FinalPractice.largest3(list));
+    }
+
+    @Test
+    void testLargest3Negative(){
+        ListNode list = new ListNode(-10, new ListNode (-20, new ListNode (-5, new ListNode (-8, new ListNode (-15)))));
+        assertEquals(-5, FinalPractice.largest3(list)); 
+    }
+
+    @Test 
+    void testLargest3FirstofLast(){
+        ListNode list = new ListNode(10, 
+                        new ListNode (20, 
+                        new ListNode (40, 
+                        new ListNode (15, 
+                        new ListNode (8)))));
+        assertEquals(40, FinalPractice.largest3(list)); 
+    }
+    @Test 
+    void testEvenSumSingle(){
+        TreeNode root = new TreeNode(8);
+
+        assertEquals(8, FinalPractice.evenSumLeaf(root));
+    }
+
+
+
 
     // TODO: Make more tests for oddIndexSum
 

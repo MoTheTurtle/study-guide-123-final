@@ -30,5 +30,44 @@ public class FinalPractice {
         return total;
     }
 
+    public static int largest3(ListNode head){
+        int x = 0;
+        int y = 0;
+        int z = 0;
+
+        while (head != null){
+            x = y;
+            y = z;
+            z = head.data; 
+
+            head = head.next;
+        }
+
+       int l = x;
+
+       if(y > l){
+        l = y;
+       }
+       if(z > l){
+        l = z;
+       }
+
+       return l; 
+    }
+
+    public static int evenSumLeaf(TreeNode root){
+        if(root == null) return 0;
+        if(root.left == null && root.right == null){
+            if(root.data % 2 ==0)
+                return root.data;
+        }
+        else{
+            return 0;
+        }
+    
+
+    return evenSumLeaf(root.left) + evenSumLeaf(root.right); 
+    }
+
     
 }
