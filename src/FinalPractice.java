@@ -16,9 +16,19 @@ public class FinalPractice {
      * @return the sum of the values at odd indexes
      */
     public static int oddIndexSum(ListNode head) {
-        // TODO: implement this AND MAKE MORE UNIT TESTS FOR IT
-        return -1;
+        int total = 0;
+        int x = 0;
+
+        while(head != null){
+            if(x%2==1){
+                total += head.data;
+            }
+
+            head = head.next;
+            x++;
+        }
+        return total;
     }
 
-    // TODO: implement the rest of the study guide AND MAKE GOOD UNIT TESTS
+    
 }

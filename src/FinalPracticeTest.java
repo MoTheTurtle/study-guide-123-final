@@ -9,6 +9,17 @@ public class FinalPracticeTest {
         int actual = FinalPractice.oddIndexSum(list);
         assertEquals(95, actual);
     }
+    @Test 
+    void testOddIndexSum_nulllist(){
+        assertEquals(0, FinalPractice.oddIndexSum(null));
+    }
+
+    @Test
+    void testOddIndexsumOneNode(){
+        ListNode list= new ListNode(5);
+        assertEquals(0, FinalPractice.oddIndexSum(list));
+    }
+
 
     // TODO: Make more tests for oddIndexSum
 
