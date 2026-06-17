@@ -1,5 +1,8 @@
 import static org.junit.Assert.*;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 
 public class FinalPracticeTest {
@@ -65,6 +68,42 @@ public class FinalPracticeTest {
         assertEquals(46, FinalPractice.evenSumLeaf(root));
     }
 
+    @Test
+    void testOddExample(){
+        TreeNode root = new TreeNode(15);
+
+        root.left = new TreeNode(9);
+        root.right = new TreeNode(4);
+        root.left.left = new TreeNode(8);
+        root.left.right = new TreeNode(11);
+        root.right.left = new TreeNode(21);
+        root.right.right = new TreeNode(30);
+        root.left.left.left = new TreeNode(2);
+        root.left.left.right = new TreeNode(6);
+        root.right.left.right = new TreeNode(23);
+    
+        assertEquals(45, FinalPractice.oddBranch(root));
+    }
+
+    @Test
+    void testOddBranchSingleNode(){
+        TreeNode root = new TreeNode(15);
+        assertEquals(0, FinalPractice.oddBranch(root));
+    }
+
+    @Test
+    void testCountValueAllSame(){
+        ListNode list = new ListNode(7,
+                        new ListNode(7,
+                        new ListNode(7,
+                        new ListNode(7 ))));
+        Map<Integer, Integer> expected = new HashMap<>();
+        expected.put(7,4);
+
+        assertEquals(expected, FinalPractice.countValues(list));
+
+                        
+    }
 
 
 

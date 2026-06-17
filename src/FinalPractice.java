@@ -1,3 +1,6 @@
+import java.util.HashMap;
+import java.util.Map;
+
 public class FinalPractice {
     public static void main(String[] args) {
         // Feel free to call your methods here to experiment
@@ -68,6 +71,35 @@ public class FinalPractice {
     
 
     return evenSumLeaf(root.left) + evenSumLeaf(root.right); 
+    }
+
+    public static int oddBranch(TreeNode root){
+        if (root == null) return 0;
+        if(root.left != null || root.right != null){
+            if(root.data %2 ==1){
+                return root.data + oddBranch(root.left)+oddBranch(root.right);
+
+            }
+        }
+        return oddBranch(root.left)+oddBranch(root.right);
+    }
+
+    public static Map<Integer, Integer> countValues(ListNode head){
+        Map<Integer, Integer> map = new HashMap<>();
+        
+        while(head != null){
+            if(map.containsKey(head.data)){
+                map.put(head.data, map.get(head.data)+1);
+
+            }
+            else{
+                map.put(head.data,1);
+            }
+            
+            head = head.next;
+        }
+
+        return map;
     }
 
     
